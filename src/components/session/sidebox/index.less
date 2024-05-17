@@ -1,0 +1,113 @@
+.session-sidebox {
+  width: 50%;
+  height: 100%;
+  position: relative;
+  padding: 80px 80px 48px;
+  background: linear-gradient(0deg, #3a485a 0%, #607089 100%);
+
+  &:after {
+    background: url('./images/session-left-1.png') no-repeat 0 0;
+  }
+
+  &:before {
+    background: url('./images/session-left-2.png') no-repeat right bottom;
+  }
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+
+  :global {
+
+    .session-sidebox-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .session-sidebox-logo {
+      img {
+        width: 144px;
+      }
+    }
+
+    .session-sidebox-title {
+      height: 1rem;
+    }
+
+    .session-sidebox-subtitle {
+      font-size: 1.714rem;
+    }
+
+    .session-sidebox-gitee{
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 26px;
+      .session-sidebox-gitee-item{
+        width: 50%;
+        margin-top: 25px;
+        .session-sidebox-gitee-item-number{
+          font-size: 32px;
+          font-weight: bold;
+          line-height: 1.15625;
+          color: #8BCAD2;
+        }
+        .session-sidebox-gitee-item-title{
+          font-size: 14px;
+          line-height: 1.42857;
+        }
+
+      }
+    }
+
+    .session-sidebox-content {
+      flex: 1;
+    }
+
+    .session-sidebox-content-header {
+      margin-top: 46px;
+      opacity: 0.5;
+
+      .session-sidebox-content-position {
+        margin-left: 12px;
+      }
+    }
+
+    .session-sidebox-content-content {
+      margin-top: 16px;
+      line-height: 1.71429;
+    }
+
+    .session-sidebox-footer {
+      font-size: 14px;
+      padding-top: 40px;
+      margin-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+      a {
+        color: white
+      }
+    }
+
+    .session-sidebox-icon-hot::after {
+      content: 'hot';
+      position: absolute;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 1px;
+      margin-top: -12px;
+      background-color: #C71D23;
+      -webkit-transform: scale(0.84);
+      transform: scale(0.84);
+    }
+
+    .session-sidebox-divider {
+      margin: 0 10px
+    }
+  }
+}

@@ -1,5 +1,5 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -24,41 +24,44 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        exclude: /node_modules/,
       },
       {
         test: /\.(css|less)$/,
         use: [
-          "style-loader",
+          'style-loader',
           {
-            loader: "css-loader",
+            loader: 'css-loader',
             options: {
-              modules: true
-            }
+              modules: true,
+            },
           },
-          "less-loader"
-        ]
+          'less-loader',
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset",
+        type: 'asset',
         parser: {
           dataUrlCondition: {
-            // 模块小于 maxSize，会被作为Base64编码的字符串注入到包中， 
-            // 否则模块文件会被生成到输出的目标目录中
-            maxSize: 1 * 1024
-          }
+            // 模块小于maxSize，会被作为Base64编码的字符串注入到包中，
+            // 否则模块文件会被生成到输出的目标目录中
+            maxSize: 1 * 1024,
+          },
         },
         generator: {
-          filename: 'assets/img/[name].[hash:6][ext]'
-        }
-      }
-    ]
+          filename: 'assets/img/[name].[hash:6][ext]',
+        },
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, './public/index.html'),
-      filename: 'index.html'
-    })
+      filename: 'index.html',
+    }),
   ],
-}
+  devServer: {
+    port: 7070,
+  },
+};

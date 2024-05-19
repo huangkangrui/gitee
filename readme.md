@@ -10,6 +10,8 @@ yarn (安装依赖包)
 
 yarn dev (启动服务)
 
+访问  http://localhost:7070/
+
 yarn build (打包发布)
 
 ```

@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
 
+import Background from '@/components/background';
+import Session from '@/components/session';
+import SignupForm from './form';
 
 const Page = () => {
-  return <div>注册页面</div>
-}
+  return <Background><Session><SignupForm /></Session></Background>;
+};
 
-export default Page
+export default Page;

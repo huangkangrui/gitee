@@ -1,7 +1,8 @@
 import React from 'react';
 
-import styles from './index.less'
-import SessionLeft from './sidebox';
+import SessionForm from './form';
+import styles from './index.less';
+import Sidebox from './sidebox';
 
 const footerItemArr = [
   {
@@ -28,21 +29,21 @@ const footerItemArr = [
     name: '重发激活邮件',
     href: 'https://gitee.com/user/activate',
   },
-]
+];
 
 
-const Session = ({ chidren }) => {
-
-  return <div className={styles.session}>
+const Session = ({ children }) => {
+  return (<div className={styles.session}>
     <div className="session-body">
-     <SessionLeft />
+      <Sidebox />
+      <SessionForm>{children}</SessionForm>
     </div>
     <div className="session-footer">
       {
         footerItemArr.map(item => <a key={item.name} className="session-footer-item" href={item.href}>{item.name}</a>)
       }
     </div>
-  </div>
-}
+  </div>);
+};
 
-export default Session
+export default Session;

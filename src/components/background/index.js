@@ -1,13 +1,11 @@
 import React from 'react';
 
-import styles from './index.less'
+import styles from './index.less';
 
 const Component = ({ children }) => {
-  return <div className={styles.wrapper}>
-    <img src={require('./images/bg-left.png')} className="bg-left" />
-    <img src={require('./images/bg-right.png')} className="bg-right" />
+  return (<div className={styles.wrapper}>
     {children}
-  </div>
-}
+  </div>);
+};
 
-export default Component
+export default Component;
